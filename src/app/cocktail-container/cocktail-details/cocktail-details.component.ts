@@ -14,6 +14,7 @@ export class CocktailDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.cocktailsService.cocktailBehavioSubject.subscribe((cock : Cocktail)=> this.cocktail = cock);
+    console.log(this.cocktail);
   }
 
 }

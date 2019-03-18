@@ -11,6 +11,7 @@ import { CocktailActifDirective } from './shared/directives/cocktail-actif.direc
 import { PanierComponent } from './panier/panier.component';
 import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
 import { CocktailContainerComponent } from './cocktail-container/cocktail-container.component';
+import { CocktailEditComponent } from './cocktail-container/cocktail-edit/cocktail-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CocktailContainerComponent } from './cocktail-container/cocktail-contai
     CocktailActifDirective,
     PanierComponent,
     IngredientsListComponent,
-    CocktailContainerComponent
+    CocktailContainerComponent,
+    CocktailEditComponent
   ],
   imports: [
     BrowserModule,

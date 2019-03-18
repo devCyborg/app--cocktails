@@ -1,3 +1,9 @@
-<p>
-  ingredients-list works!
-</p>
+<h3> panier : </h3>
+<hr>
+<div class="row">
+  <ul class="list-group col-12">
+    <li class="list-group-item list-group-item-action d-flex" *ngFor="let ingredient of ingredients">{{ingredient.name}}
+      <span class="badge badge-pill badge-light ml-auto">{{ingredient.quantite}}</span>
+    </li>
+  </ul>
+</div>

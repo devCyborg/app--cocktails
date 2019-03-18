@@ -3,6 +3,7 @@ import { Cocktail } from '../../shared/model/cocktail.model';
 import {CocktailService} from '../../shared/service/cocktail.service';
 import {Ingredient} from '../../shared/model/ingredient.model';
 import {PanierService} from '../../shared/service/panier.service';
+import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-cocktail-details',
@@ -12,11 +13,19 @@ import {PanierService} from '../../shared/service/panier.service';
 export class CocktailDetailsComponent implements OnInit {
   public cocktail :Cocktail;
 
-  constructor(private cocktailsService :CocktailService, private panierService : PanierService) { }
+  constructor(private activatedRouter: ActivatedRoute,private cocktailsService :CocktailService, private panierService : PanierService) { }
 
   ngOnInit() {
-    this.cocktailsService.cocktailBehavioSubject.subscribe((cock : Cocktail)=> this.cocktail = cock);
-    console.log(this.cocktail);
+    this.activatedRouter.params.subscribe( (params:Params) => {
+
+      //activer cocktail zero par defaut
+      if (params.index){
+        this.cocktail=this.cocktailsService.getCocktail(params.index);
+      }else{
+        this.cocktail=this.cocktailsService.getCocktail(0);
+      }
+
+    } );
   }
   addIngredients(ingredients: Ingredient[]): void {
 

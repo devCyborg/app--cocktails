@@ -10,7 +10,7 @@ import {Subscription} from 'rxjs';
 })
 export class IngredientsListComponent implements OnInit,OnDestroy {
 
-  public ingredients : Ingredient[]=[new Ingredient("citron", 2)];
+  public ingredients : Ingredient[]=[];
   subscription: Subscription;
 
   constructor(private paniersService: PanierService) { }

@@ -20,11 +20,4 @@ export class CocktailsListComponent implements OnInit {
     this.cocktailsService.listCocktailBehaviorSubject.subscribe((listCocktail: Cocktail[])=> this.cocktails= listCocktail);
   }
 
-  //coktail choisi
-  pickCockail(index : number) :void{
-    this.activeCocktail = index;
-    console.log("index:", index);
-    this.cocktailsService.chooseCocktail(index);
-
-  }
 }

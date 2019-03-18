@@ -3,11 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CocktailsListComponent } from './cocktails-list/cocktails-list.component';
+import { CocktailsListComponent } from './cocktail-container/cocktails-list/cocktails-list.component';
 
 import { HeaderComponent } from './header/header.component';
-import { CocktailDetailsComponent } from './cocktail-details/cocktail-details.component';
+import { CocktailDetailsComponent } from './cocktail-container/cocktail-details/cocktail-details.component';
 import { CocktailActifDirective } from './shared/directives/cocktail-actif.directive';
+import { PanierComponent } from './panier/panier.component';
+import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
+import { CocktailContainerComponent } from './cocktail-container/cocktail-container.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { CocktailActifDirective } from './shared/directives/cocktail-actif.direc
     CocktailsListComponent,
     HeaderComponent,
     CocktailDetailsComponent,
-    CocktailActifDirective
+    CocktailActifDirective,
+    PanierComponent,
+    IngredientsListComponent,
+    CocktailContainerComponent
   ],
   imports: [
     BrowserModule,
